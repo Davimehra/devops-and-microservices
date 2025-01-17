@@ -1,0 +1,215 @@
+NameSpace (abbreviated as NS)
+	it is an virtual cluster
+	it helps to make an different virtual space for organizing components for different projects or for same project for different fuctionality
+
+	--> kubectl get namespace
+	
+	
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+type of namespaces in kubernetes (with respect to minikube)
+
+	a. kube-system
+	b. kube-public
+	c. kube-node-lease
+	d. default
+	
+------------------------------------------------------------
+kube-system
+It is basically not be used by user,
+the components that are deployed in kube-system are System processes
+Master processes, kubelet processes, managing processes etc.
+
+
+------------------------------------------------------------
+kube-public
+publicaly accessible data
+A configMap , Which contains cluster information 
+eg --> kubectl cluster-info
+
+
+------------------------------------------------------------
+kube-node-lease
+holds information of heartbeat of nodes
+each node has associated lease object in namespace
+determines the availability of a Node
+
+
+------------------------------------------------------------
+default
+resource you create are located here in exception you haven't used your own namespace
+
+
+
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+CREATING A NAMESPACE
+1. create namespace NameOfNamespace
+2. using configuration file , here we have created deployment namespace
+
+	apiVersion: v1
+	kind: Namespace
+	metadata:
+	  name: development
+	  labels:
+	    name: development
+
+To make sure namespace is created
+--> kubectl get namespaces --show-labels
+check labels
+
+
+
+
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+usage of Namespaces
+1. Help to organize your commponents in well mannered format or Resouces grouped in Namespaces
+like database Namespace, monitoring Namespace, Elastic Stack Namespace, Nginx-ingress Namespace etc.
+
+2. Conflicts of same named resources can cause resouses to get chance of overriden, so namespace for each project will help to solve these conflicts.
+
+3. Stagging and Development can be done in same cluster without conflict by using Namespaces. 
+(Please Check out for config context-set and context-use with respect to namespaces (https://kubernetes.io/docs/tasks/administer-cluster/namespaces-walkthrough/))
+
+
+4. For blue / Green Deployement , namespace will help to organize two different versions of productions going on in same cluster.
+
+5. Access and Resouces Limits on Namespace can be done for different teams projects
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+CHARACTERISTICS of NAMESPACES (NS)
+
+
+1. You can't access most resources from other Namespace
+Meaning if you created an configMap in NamespaceA and want to use configMap in NamespaceB it is NOT possible ,we must create new configMap with same values to NamespaceB in this case
+(Each NS must define own ConfigMap,Secret etc)
+
+
+------------------------------------------------------------
+
+
+2. You can Share Service from one NS to Other NS
+
+Example 
+Imagine you have 3 NS 
+1. ProjectA  --> own ConfigMapA,SecretsA, DeploymentsA
+2. ProjectB  --> own ConfigMapB,SecretsB, DeploymentsB
+3. database  --> mongodb Deployment, service (ClusterIP) (name of serive (mongo-srv))
+
+Now ProjectA want to use Database NS mongodb Service and similary ProjectB also want to use Database NS mongodb Service
+So you need to put for ProjectA ConfigMapA
+
+		apiVersion: v1
+		kind: ConfigMap
+		metadata: 
+		  name: project-a-config-map
+		  namespace: ProjectA
+		data:
+		  mongodbServiceName: mongo-srv.database
+Here NOTE
+mongo-srv = service name of mongodb service 
+database  = it is the namespace name in which this service is available
+. = dot will help to recognize the NS in which this service is available
+
+
+------------------------------------------------------------
+
+
+
+3. Components, which can't be create within a Namespace (live globally in cluster, you can't isolate them in any namespace)
+  a. Persistence Volume (pv)
+  b. Node (no)
+  
+  To check which components can be and cannot be isolated within namespace use
+  --> kubectl api-resources --namespaced=false
+  --> kubectl api-resources --namespaced=true
+  
+ ------------------------------------------------------------
+ 
+  
+4. Create component in a Namespace
+	there are two way 
+
+CLI way --> kubectl apply -f FileName.yaml --namespace=ProjectA
+
+Manifest way
+
+		apiVersion: v1
+		kind: ConfigMap
+		metadata: 
+		  name: project-a-config-map
+		  namespace: ProjectA
+		data:
+		  mongodbServiceName: mongo-srv.database
+
+Here Check metadata.namespace which is for ProjectA
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+How to change context (ctx) or namespace (ns) in kubernetes
+First of all there is an command to check all the configuration of the kubernetes cluster
+--> kubectl config view
+
+This will give something like this
+
+	apiVersion: v1
+	clusters:
+	- cluster:
+	    certificate-authority: /home/linuxdavi/.minikube/ca.crt
+	    extensions:
+	    - extension:
+		last-update: Fri, 30 Jun 2023 13:15:07 IST
+		provider: minikube.sigs.k8s.io
+		version: v1.30.1
+	      name: cluster_info
+	    server: https://192.168.49.2:8443
+	  name: minikube
+	contexts:
+	- context:
+	    cluster: minikube
+	    extensions:
+	    - extension:
+		last-update: Fri, 30 Jun 2023 13:15:07 IST
+		provider: minikube.sigs.k8s.io
+		version: v1.30.1
+	      name: context_info
+	    namespace: default
+	    user: minikube
+	  name: minikube
+	current-context: minikube
+	kind: Config
+	preferences: {}
+	users:
+	- name: minikube
+	  user:
+	    client-certificate: /home/linuxdavi/.minikube/profiles/minikube/client.crt
+	    client-key: /home/linuxdavi/.minikube/profiles/minikube/client.key
+	    
+
+Checkout contexts
+we can have more than one context (cluster) like for googleCloud Server context or aws Context or any local self created Context
+even we can create many Namespace within that context
+
+So check out this link -> https://kubernetes.io/docs/tasks/administer-cluster/namespaces-walkthrough/
+or
+You can do with kubectx and kubens package
+kubectx is used to list or switch between contexts (cluster)
+kubens is used to list or switch between Namespace
+
+Installation Link -->  https://github.com/ahmetb/kubectx
+	
+Installation Video -> https://www.youtube.com/watch?v=dkukfNZjdBs
+
+Command for listing NS   --> kubens
+Command for switching NS --> kubens Namespace_Name
+
+
+Command for listing Context   --> kubens
+Command for switching Context --> kubens Namespace_Name
+
+

@@ -1,0 +1,18 @@
+
+
+# [mongodb[+srv]://][user:pass@]host1[:port1][,host2[:port2],...][/database][?options]
+mongodb:
+  uri: "mongodb://mongodb-svc:27017"
+
+
+serviceMonitor:
+  enabled: true
+  interval: 30s
+  scrapeTimeout: 10s
+  namespace:
+  additionalLabels: {release: prometheus}
+  targetLabels: []
+  metricRelabelings: []
+  scheme: ""
+  tlsConfig: {}
+

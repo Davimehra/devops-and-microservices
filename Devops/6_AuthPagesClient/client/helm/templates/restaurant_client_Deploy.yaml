@@ -1,0 +1,68 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: restaurant-client-depl
+  labels:
+    app.kubernetes.io/component: 'frontend'
+    app.kubernetes.io/name: 'restaurant_client_depl' 
+    app.kubernetes.io/part-of: 'react'
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: restaurant-client
+  strategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: restaurant-client
+    spec:
+      nodeSelector:
+        zone: eu-north-1a
+      {{- if eq true .Values.enableAffinity }}
+      affinity:
+        {{- with .Values.affinity }}
+        {{ toYaml . | nindent 8 }}
+        {{- end }}
+      {{- end }}
+      containers:
+        - name: restaurant-client
+          {{- if eq "dev" .Values.RUNTIME_ENV }}
+          args: ["run","dev"]
+          {{- else if eq "prod" .Values.RUNTIME_ENV }}
+          args: ["start"]
+          {{- else if eq "test" .Values.RUNTIME_ENV }}
+          args: ["run","dev"]
+          {{- end }}
+          # prettier-ignore
+          image: {{ .Values.client_image }}
+          ports:
+            - containerPort: 3000
+          {{- if eq .Values.enableResouces true }}
+          resources:
+          {{- with .Values.resources }}
+            {{ toYaml . | nindent 12 }}
+          {{- end }}
+          {{- end }}
+          {{- if eq true .Values.enablelivenessProbe }}
+          livenessProbe:
+            {{- with .Values.livenessProbe }}
+            {{ toYaml . | nindent 12 }}
+            {{- end }}
+          {{- end }}  
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: restaurant-client-svc
+spec:
+  type: ClusterIP
+  selector:
+    app: restaurant-client
+  ports:
+    - name: restaurant-client-serviceport
+      protocol: TCP
+      port: 80
+      targetPort: 3000

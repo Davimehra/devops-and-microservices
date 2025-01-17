@@ -1,0 +1,70 @@
+
+NAME OF THE POD EXPLANATION
+nginx-depl -87sbv90cs0e  -i4ck9
+
+Depl_NAME  = nginx-depl
+replicasetName = 87sbv90cs0e
+OwnId = i4ck9
+
+
+LAYERS OF ABSTACTION
+a. Deployment 
+b. ReplicaSet
+c. Pod
+d. Container
+
+Only we can change Deployement not any thing below it (Changes we do in Deployement Will reflected in below layers by kubernetes automatically)
+all other layers are controlled by kubernetes like ReplicaSet,Pod,Container 
+
+
+
+DEPLOYMENT
+Creating Deployment using create command (Depretiated)
+--> kubectl create deployment DEPL_NAME --image=DOCKER_IMAGE_NAME  option1 option2 option3
+
+Creating Deployemt using apply command (it will fetch the all the configration required for deployment from the file in Yaml Format)
+--> kubectl apply -f FILE_NAME.yaml
+-f (Stands for file)
+
+--> kubectl get deployment
+
+How to check the status (CONFIG) of the deployment store in 'etcd' component of MASTER NODE
+ --> kubectl get deployment DEPL_NAME -o yaml > NAME_OF_SAVING_FILE_IN.yaml
+ 
+ HERE
+ -o  = output
+ yaml = type of output
+ >  = it is the signal to save the status or configration file store in etcd to your desired FileName
+
+Replicaset is managing the replicas of a Pod
+--> kubectl get replicaset         
+
+Editing the deployement
+--> kubectl edit deployment DEPL_NAME
+-> qw
+-> Press Enter
+
+Deleting pod and all there replicas,container (JUST DELETE DEPLOYMENT)
+--> kubectl delete deployment DEPL_NAME
+
+
+
+
+POD
+--> kubectl get pod
+--> kubectl get pod -o wide              --> wide view of details of pod including there temperary ip Address
+--> kubectl describe pod POD_NAME        --> Describe will show the process performed by kubernetes for state Changes or any other operations performed on pod (like pulling image,creating Container, starting container)
+--> kubectl logs POD_NAME                --> Log will show the logs of the running pod application inside the container (like mongo,redis,nginx etc)
+
+CONTAINER
+--> kubectl exec -it POD_NAME sh
+exec => execute
+-it  => interativeTerminal (for input,Output both like stdin + stdout)
+
+
+
+
+Logs Commands
+  Ingress Logs Command
+	reference Link  - https://serverfault.com/questions/862308/how-do-i-view-logs-for-my-kubernetes-ingress-controller
+$ kubectl logs -n ingress-nginx -l app.kubernetes.io/name=ingress-nginx

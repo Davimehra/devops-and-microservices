@@ -1,0 +1,23 @@
+#Trying New stuff
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mongodb-configmap
+  namespace: default
+data:
+  primary.js: |
+    db.createUser(
+        {
+            user: "davinder",
+            pwd: "davinderpass",
+            roles: [
+                {
+                    role: "readWrite",
+                    db: "students"
+                }
+            ]
+        }
+    );
+
+    use students;
+    db.studentdata.insertOne({name:'FirstStudent1'})

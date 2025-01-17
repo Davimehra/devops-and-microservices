@@ -1,0 +1,268 @@
+<mxfile host="Electron" modified="2023-11-06T12:07:34.588Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.6.8 Chrome/114.0.5735.289 Electron/25.5.0 Safari/537.36" etag="ujUn6k7XEG1Zpe7C3ppP" version="21.6.8" type="device">
+  <diagram name="Page-1" id="amN3JxpSPoLH67IyOQqJ">
+    <mxGraphModel dx="2011" dy="1902" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="3Insr8xSuDvDj9gULkQm-56" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;" edge="1" parent="1" source="3Insr8xSuDvDj9gULkQm-35" target="3Insr8xSuDvDj9gULkQm-49">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1165" y="800" />
+              <mxPoint x="1165" y="800" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3Insr8xSuDvDj9gULkQm-40" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;dashed=1;exitX=1.001;exitY=0.074;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="3Insr8xSuDvDj9gULkQm-30" target="3Insr8xSuDvDj9gULkQm-35">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="690" y="520" as="sourcePoint" />
+            <mxPoint x="740" y="470" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="800" y="336" />
+              <mxPoint x="800" y="520" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3Insr8xSuDvDj9gULkQm-85" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;&lt;b&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;Reference Links&lt;br&gt;&lt;/b&gt;&lt;br&gt;&lt;/font&gt;&lt;div style=&quot;font-size: 15px;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;font style=&quot;font-size: 15px;&quot;&gt;&lt;b&gt;1. &lt;/b&gt;Kubernetes Obejct Kinds&lt;b&gt; &lt;a href=&quot;https://kodekloud.com/blog/kubernetes-objects/&quot;&gt;Link&lt;/a&gt;&lt;/b&gt;&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1850" y="1760" width="433" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="3Insr8xSuDvDj9gULkQm-91" value="" style="endArrow=classic;html=1;rounded=0;dashed=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" target="3Insr8xSuDvDj9gULkQm-47">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="692" y="240" as="sourcePoint" />
+            <mxPoint x="2310" y="240" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1855" y="240" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3Insr8xSuDvDj9gULkQm-97" value="&lt;b style=&quot;border-color: var(--border-color); font-size: 16px;&quot;&gt;&amp;nbsp; Run These all Manifests&amp;nbsp;&amp;nbsp;&lt;/b&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];labelBorderColor=default;" vertex="1" connectable="0" parent="3Insr8xSuDvDj9gULkQm-91">
+          <mxGeometry x="-0.1963" y="1" relative="1" as="geometry">
+            <mxPoint x="-219" y="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3Insr8xSuDvDj9gULkQm-35" value="&lt;font style=&quot;&quot;&gt;&lt;b style=&quot;&quot;&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;&lt;br&gt;&lt;/span&gt;&lt;/b&gt;&lt;/font&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;br&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; Initializing Code&lt;br&gt;&lt;br&gt;&lt;/font&gt;&lt;blockquote style=&quot;margin: 0px 0px 0px 40px; border: none; padding: 0px; line-height: 150%;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;1. &lt;b&gt;Fetch &lt;font color=&quot;#387cd6&quot;&gt;Docker Image&lt;/font&gt; via DockerImage_Name&lt;/b&gt;&amp;nbsp;from DockerRepo&lt;br&gt;&lt;/font&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;(It does&#39;nt contain any packages or Dependencies of Code in it )&lt;/font&gt;&lt;/blockquote&gt;&lt;blockquote style=&quot;margin: 0px 0px 0px 40px; border: none; padding: 0px; line-height: 150%;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;2. &lt;b&gt;Run&lt;/b&gt; &lt;font color=&quot;#387cd6&quot;&gt;DockerFile&lt;/font&gt;&amp;nbsp; &lt;/font&gt;&lt;/blockquote&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;ul style=&quot;line-height: 150%;&quot;&gt;&lt;ul style=&quot;line-height: 150%;&quot;&gt;&lt;li&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;It will&amp;nbsp; &lt;b&gt;install&lt;/b&gt; all &lt;b&gt;Dependencies&lt;/b&gt; , provided in &lt;b&gt;packages file&lt;/b&gt;&lt;/span&gt;&lt;br&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Docker it will provide &lt;b&gt;Isolate Container&lt;/b&gt; for your code, &lt;/span&gt;&lt;b style=&quot;background-color: initial;&quot;&gt;workDirectory&lt;/b&gt;&lt;br&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;It will&lt;b&gt; run the services&lt;/b&gt; now&lt;/span&gt;&lt;br&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/ul&gt;&lt;/font&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;While updating code&lt;/font&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;blockquote style=&quot;margin: 0px 0px 0px 40px; border: none; padding: 0px; line-height: 150%;&quot;&gt;&lt;/blockquote&gt;&lt;span style=&quot;font-size: 14px; background-color: initial;&quot;&gt;&lt;span style=&quot;font-weight: bold; white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;font-weight: bold; white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;1. &lt;b&gt;local:&lt;/b&gt;&lt;/span&gt;&lt;br&gt;&lt;blockquote style=&quot;margin: 0px 0px 0px 40px; border: none; padding: 0px; line-height: 150%;&quot;&gt;&lt;/blockquote&gt;&lt;span style=&quot;font-size: 14px; background-color: initial; white-space: pre;&quot;&gt;&#x9;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;font-size: 14px; background-color: initial;&quot;&gt;Means do you want to do actions for your local saved data&lt;/span&gt;&lt;br&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;b&gt;push:&lt;/b&gt; your local data to &lt;font color=&quot;#387cd6&quot;&gt;docker repository.&lt;/font&gt;&lt;br&gt;&lt;/font&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;&amp;nbsp;&lt;br&gt;&lt;/font&gt;" style="text;html=1;strokeColor=#36393d;fillColor=#cdeb8b;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=1;dashed=1;arcSize=4;glass=0;shadow=0;" vertex="1" parent="1">
+          <mxGeometry x="870" y="313" width="640" height="414" as="geometry" />
+        </mxCell>
+        <mxCell id="3Insr8xSuDvDj9gULkQm-42" value="" style="ellipse;fillColor=strokeColor;html=1;" vertex="1" parent="1">
+          <mxGeometry x="878" y="380" width="22" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="3Insr8xSuDvDj9gULkQm-43" value="" style="sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;fillColor=#505050;shape=mxgraph.mscae.intune.update" vertex="1" parent="1">
+          <mxGeometry x="879" y="584" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="3Insr8xSuDvDj9gULkQm-102" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="1250" y="330" width="240" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="3Insr8xSuDvDj9gULkQm-100" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;glass=0;shadow=1;" vertex="1" parent="3Insr8xSuDvDj9gULkQm-102">
+          <mxGeometry width="240" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="3Insr8xSuDvDj9gULkQm-34" value="" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.codebuild;fillColor=#759C3E;gradientColor=none;" vertex="1" parent="3Insr8xSuDvDj9gULkQm-102">
+          <mxGeometry x="10" y="14" width="38.25" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="3Insr8xSuDvDj9gULkQm-101" value="&lt;font style=&quot;border-color: var(--border-color); text-align: left;&quot;&gt;&lt;b style=&quot;border-color: var(--border-color);&quot;&gt;&lt;font style=&quot;border-color: var(--border-color); font-size: 17px;&quot;&gt;Building Process&lt;/font&gt;&lt;/b&gt;&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="3Insr8xSuDvDj9gULkQm-102">
+          <mxGeometry x="70" y="14" width="150" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="3Insr8xSuDvDj9gULkQm-105" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="1710" y="280" width="340" height="730" as="geometry" />
+        </mxCell>
+        <mxCell id="3Insr8xSuDvDj9gULkQm-104" value="&lt;b style=&quot;border-color: var(--border-color); font-size: 16px; background-color: rgb(255, 255, 255);&quot;&gt;&amp;nbsp; Orchestration Type&amp;nbsp;&amp;nbsp;&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=default;fillColor=default;rounded=1;container=0;" vertex="1" parent="3Insr8xSuDvDj9gULkQm-105">
+          <mxGeometry x="48" width="190" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="3Insr8xSuDvDj9gULkQm-84" value="&lt;h1&gt;Kubernetes&lt;/h1&gt;&lt;font style=&quot;&quot;&gt;&lt;b style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 15px;&quot;&gt;container &lt;font color=&quot;#387cd6&quot;&gt;orchestration&lt;/font&gt; tool&lt;/font&gt;&lt;/b&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;, &lt;/span&gt;&lt;br&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;used to&lt;b&gt; deploy &amp;amp; manage &lt;/b&gt;containerized applications &lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;in an automated way.&lt;/span&gt;&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;container=0;" vertex="1" parent="3Insr8xSuDvDj9gULkQm-105">
+          <mxGeometry y="610" width="340" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="3Insr8xSuDvDj9gULkQm-47" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1ba1e2;strokeColor=#006EAF;fontColor=#ffffff;glass=1;shadow=1;container=0;" vertex="1" parent="3Insr8xSuDvDj9gULkQm-105">
+          <mxGeometry x="2" y="70" width="286" height="510" as="geometry" />
+        </mxCell>
+        <mxCell id="3Insr8xSuDvDj9gULkQm-78" value="&lt;font style=&quot;&quot;&gt;&lt;b style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 17px;&quot;&gt;Kubernetes&lt;/font&gt;&lt;br&gt;&lt;/b&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;Services (&lt;/span&gt;&lt;b style=&quot;font-size: 14px;&quot;&gt;srv&lt;/b&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;) &amp;amp; Deployements (&lt;/span&gt;&lt;b style=&quot;font-size: 14px;&quot;&gt;depl&lt;/b&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;)&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;Config Files as &lt;/span&gt;&lt;b style=&quot;font-size: 14px;&quot;&gt;YAML &lt;/b&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;Format&lt;/span&gt;&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;container=0;" vertex="1" parent="3Insr8xSuDvDj9gULkQm-105">
+          <mxGeometry x="23" y="190" width="240" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="3Insr8xSuDvDj9gULkQm-79" value="" style="rounded=1;whiteSpace=wrap;html=1;container=0;" vertex="1" parent="3Insr8xSuDvDj9gULkQm-105">
+          <mxGeometry x="16" y="260" width="260" height="290" as="geometry" />
+        </mxCell>
+        <mxCell id="3Insr8xSuDvDj9gULkQm-80" value="&lt;div style=&quot;text-align: left; font-size: 16px; line-height: 170%;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;1.&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&lt;/b&gt;Pods&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;&lt;div style=&quot;text-align: left; line-height: 170%;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;b&gt;2.&lt;/b&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;Deployments&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left; line-height: 170%;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;b&gt;3.&lt;/b&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;ReplicaSets&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left; line-height: 170%;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;b&gt;4.&lt;/b&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;StatefulSet&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left; line-height: 170%;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;b&gt;5.&lt;/b&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;DaemonSets&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left; line-height: 170%;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;b&gt;6.&lt;/b&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;PersistentVolumes&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left; line-height: 170%;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;b&gt;7.&lt;/b&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;Service&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left; line-height: 170%;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;b&gt;8.&lt;/b&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;NameSpaces&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left; line-height: 170%;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;b&gt;9,10&lt;/b&gt;.&amp;nbsp; ConfigMaps &amp;amp; Secrets&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left; line-height: 170%;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;b style=&quot;&quot;&gt;11&lt;/b&gt;.&amp;nbsp; &amp;nbsp; &amp;nbsp;Jobs&lt;/span&gt;&lt;/div&gt;&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;container=0;" vertex="1" parent="3Insr8xSuDvDj9gULkQm-105">
+          <mxGeometry x="41" y="271" width="210" height="270" as="geometry" />
+        </mxCell>
+        <mxCell id="3Insr8xSuDvDj9gULkQm-83" value="" style="image;sketch=0;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/mscae/Kubernetes.svg;container=0;" vertex="1" parent="3Insr8xSuDvDj9gULkQm-105">
+          <mxGeometry x="116" y="100" width="50" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="3Insr8xSuDvDj9gULkQm-108" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="-45" y="-10" width="765" height="820" as="geometry" />
+        </mxCell>
+        <mxCell id="3Insr8xSuDvDj9gULkQm-3" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1ba1e2;strokeColor=#006EAF;arcSize=5;fontColor=#ffffff;glass=0;shadow=0;" vertex="1" parent="3Insr8xSuDvDj9gULkQm-108">
+          <mxGeometry y="120" width="765" height="700" as="geometry" />
+        </mxCell>
+        <mxCell id="3Insr8xSuDvDj9gULkQm-30" value="" style="rounded=1;whiteSpace=wrap;html=1;arcSize=3;" vertex="1" parent="3Insr8xSuDvDj9gULkQm-108">
+          <mxGeometry x="40" y="310" width="695" height="480" as="geometry" />
+        </mxCell>
+        <mxCell id="3Insr8xSuDvDj9gULkQm-2" value="&lt;font style=&quot;font-size: 30px;&quot;&gt;Scaffold&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="3Insr8xSuDvDj9gULkQm-108">
+          <mxGeometry x="329.25" y="137.5" width="116.5" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="3Insr8xSuDvDj9gULkQm-6" value="&lt;div style=&quot;text-align: left;&quot;&gt;&lt;b style=&quot;background-color: initial;&quot;&gt;&lt;font style=&quot;font-size: 22px;&quot;&gt;Skaffold&lt;/font&gt;&lt;/b&gt;&lt;span style=&quot;background-color: initial; font-size: 14px;&quot;&gt; handles the&lt;/span&gt;&lt;/div&gt;&lt;font style=&quot;&quot;&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt; workflow for &lt;/span&gt;&lt;b style=&quot;font-size: 14px;&quot;&gt;building, pushing, and deploying your application&lt;/b&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;, and &lt;/span&gt;&lt;br&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;provides building blocks for &lt;/span&gt;&lt;b style=&quot;font-size: 14px;&quot;&gt;creating CI/CD pipelines&lt;/b&gt;&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=1;fillStyle=solid;arcSize=29;" vertex="1" parent="3Insr8xSuDvDj9gULkQm-108">
+          <mxGeometry width="465" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="3Insr8xSuDvDj9gULkQm-7" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;Automates (CI/CD Pipeline)&lt;/b&gt;&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="3Insr8xSuDvDj9gULkQm-108">
+          <mxGeometry x="40" y="160" width="220" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="3Insr8xSuDvDj9gULkQm-31" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="3Insr8xSuDvDj9gULkQm-108">
+          <mxGeometry x="40" y="200" width="695" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="3Insr8xSuDvDj9gULkQm-26" value="" style="endArrow=none;html=1;strokeWidth=3;dashed=1;curved=1;dashPattern=1 1;startSize=11;endSize=2;" edge="1" parent="3Insr8xSuDvDj9gULkQm-108">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="535" y="539.5" as="sourcePoint" />
+            <mxPoint x="705" y="539.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3Insr8xSuDvDj9gULkQm-27" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;1. Deploy &lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;br&gt;&lt;b&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;ControlTemporalLogic&lt;/b&gt;-&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; kubectl&lt;br&gt;&lt;b&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;Manifests_toRun_ctl_Loc&lt;/b&gt; -&amp;nbsp; &amp;nbsp; &amp;nbsp;&lt;/font&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;./infra/k8s/*&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="3Insr8xSuDvDj9gULkQm-108">
+          <mxGeometry x="65" y="200" width="430" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="3Insr8xSuDvDj9gULkQm-28" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;2. Build&lt;br&gt;&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="3Insr8xSuDvDj9gULkQm-108">
+          <mxGeometry x="65" y="330" width="380" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="3Insr8xSuDvDj9gULkQm-33" value="" style="image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;fontColor=#4277BB;labelBackgroundColor=default;fontSize=12;spacingTop=3;image=img/lib/ibm/devops/continuous_deploy.svg;" vertex="1" parent="3Insr8xSuDvDj9gULkQm-108">
+          <mxGeometry x="685" y="215" width="35" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="3Insr8xSuDvDj9gULkQm-41" value="" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.codebuild;fillColor=#759C3E;gradientColor=none;" vertex="1" parent="3Insr8xSuDvDj9gULkQm-108">
+          <mxGeometry x="685" y="330" width="38.25" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="3Insr8xSuDvDj9gULkQm-45" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://www.devopsmadness.com/images/skaffold/skaffold_logo.png;clipPath=inset(17.48% 39.33% 42.02% 38.33%);" vertex="1" parent="3Insr8xSuDvDj9gULkQm-108">
+          <mxGeometry x="456.93" y="140" width="38.07" height="37.5" as="geometry" />
+        </mxCell>
+        <mxCell id="3Insr8xSuDvDj9gULkQm-106" value="" style="group" vertex="1" connectable="0" parent="3Insr8xSuDvDj9gULkQm-108">
+          <mxGeometry x="55" y="380" width="470" height="390" as="geometry" />
+        </mxCell>
+        <mxCell id="3Insr8xSuDvDj9gULkQm-15" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fad7ac;strokeColor=#b46504;glass=1;shadow=1;" vertex="1" parent="3Insr8xSuDvDj9gULkQm-106">
+          <mxGeometry x="240" width="230" height="390" as="geometry" />
+        </mxCell>
+        <mxCell id="3Insr8xSuDvDj9gULkQm-17" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;&lt;b&gt;artifact 2&lt;/b&gt;&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="3Insr8xSuDvDj9gULkQm-106">
+          <mxGeometry x="301" y="30" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="3Insr8xSuDvDj9gULkQm-18" value="&lt;span style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;DockerFile - Location&lt;/b&gt;&lt;br&gt;Build Dockerized Container&lt;br&gt;&lt;/span&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="3Insr8xSuDvDj9gULkQm-106">
+          <mxGeometry x="260" y="130" width="200" height="41" as="geometry" />
+        </mxCell>
+        <mxCell id="3Insr8xSuDvDj9gULkQm-19" value="&lt;span style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;Sync - Location&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;sourceLoc&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;DestinationLoc&lt;br&gt;&lt;/span&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="3Insr8xSuDvDj9gULkQm-106">
+          <mxGeometry x="260" y="180" width="150" height="75.5" as="geometry" />
+        </mxCell>
+        <mxCell id="3Insr8xSuDvDj9gULkQm-39" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;DockerImage_Name - &lt;br&gt;&lt;/b&gt;Automate - Push/Pull&lt;/font&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="3Insr8xSuDvDj9gULkQm-106">
+          <mxGeometry x="261" y="80" width="160" height="41" as="geometry" />
+        </mxCell>
+        <mxCell id="3Insr8xSuDvDj9gULkQm-10" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fad7ac;strokeColor=#b46504;glass=1;shadow=1;" vertex="1" parent="3Insr8xSuDvDj9gULkQm-106">
+          <mxGeometry width="230" height="390" as="geometry" />
+        </mxCell>
+        <mxCell id="3Insr8xSuDvDj9gULkQm-4" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;DockerImage_Name - &lt;br&gt;&lt;/b&gt;Automate - Push/Pull&lt;/font&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="3Insr8xSuDvDj9gULkQm-106">
+          <mxGeometry x="20" y="80" width="160" height="41" as="geometry" />
+        </mxCell>
+        <mxCell id="3Insr8xSuDvDj9gULkQm-8" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;&lt;b&gt;artifact 1&lt;/b&gt;&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="3Insr8xSuDvDj9gULkQm-106">
+          <mxGeometry x="61" y="30" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="3Insr8xSuDvDj9gULkQm-11" value="&lt;span style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;DockerFile - Location&lt;/b&gt;&lt;br&gt;Build Dockerized Container&lt;br&gt;&lt;/span&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="3Insr8xSuDvDj9gULkQm-106">
+          <mxGeometry x="20" y="130" width="200" height="41" as="geometry" />
+        </mxCell>
+        <mxCell id="3Insr8xSuDvDj9gULkQm-12" value="&lt;span style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;Sync - Location&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;sourceLoc&lt;br&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;DestinationLoc&lt;br&gt;&lt;/span&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="3Insr8xSuDvDj9gULkQm-106">
+          <mxGeometry x="20" y="180" width="150" height="75.5" as="geometry" />
+        </mxCell>
+        <mxCell id="3Insr8xSuDvDj9gULkQm-109" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="-30.00000000000003" y="1010" width="1390" height="804" as="geometry" />
+        </mxCell>
+        <mxCell id="3Insr8xSuDvDj9gULkQm-54" value="" style="group;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" vertex="1" connectable="0" parent="3Insr8xSuDvDj9gULkQm-109">
+          <mxGeometry x="1000" width="390" height="450" as="geometry" />
+        </mxCell>
+        <mxCell id="3Insr8xSuDvDj9gULkQm-49" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1ba1e2;fontColor=#ffffff;strokeColor=#006EAF;shadow=1;" vertex="1" parent="3Insr8xSuDvDj9gULkQm-54">
+          <mxGeometry width="390" height="450" as="geometry" />
+        </mxCell>
+        <mxCell id="3Insr8xSuDvDj9gULkQm-50" value="&lt;div style=&quot;text-align: center;&quot;&gt;&lt;b style=&quot;color: rgb(255, 255, 255); background-color: initial;&quot;&gt;&lt;font style=&quot;font-size: 19px;&quot;&gt;DockerFile&lt;/font&gt;&lt;/b&gt;&lt;/div&gt;&lt;font color=&quot;#ffffff&quot; style=&quot;font-size: 15px;&quot;&gt;&amp;nbsp;&lt;br&gt;Example&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="3Insr8xSuDvDj9gULkQm-54">
+          <mxGeometry x="50" y="20" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="3Insr8xSuDvDj9gULkQm-52" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="3Insr8xSuDvDj9gULkQm-54">
+          <mxGeometry x="20" y="90" width="350" height="320" as="geometry" />
+        </mxCell>
+        <mxCell id="3Insr8xSuDvDj9gULkQm-51" value="&lt;div style=&quot;font-size: 16px;&quot;&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;FROM&lt;/b&gt; node:alpine&amp;nbsp; &amp;nbsp;&amp;nbsp;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 16px;&quot;&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 16px;&quot;&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;WORKDIR&lt;/b&gt; /app&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 16px;&quot;&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 16px;&quot;&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;COPY&lt;/b&gt; package.json .&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 16px;&quot;&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 16px;&quot;&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;RUN&lt;/b&gt; npm install --only=prod&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 16px;&quot;&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 16px;&quot;&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 16px;&quot;&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;COPY&lt;/b&gt; . .&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 16px;&quot;&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 16px;&quot;&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;CMD&lt;/b&gt; [ &quot;npm&quot;,&quot;start&quot; ]&lt;/font&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="3Insr8xSuDvDj9gULkQm-54">
+          <mxGeometry x="55.129999999999995" y="130" width="248" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="3Insr8xSuDvDj9gULkQm-57" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;exitX=0.999;exitY=0.631;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="3Insr8xSuDvDj9gULkQm-54" source="3Insr8xSuDvDj9gULkQm-58">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-120" y="150" as="sourcePoint" />
+            <mxPoint x="40" y="150" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3Insr8xSuDvDj9gULkQm-58" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;&lt;b&gt;&lt;font color=&quot;#000000&quot;&gt;From&lt;/font&gt;&lt;/b&gt;&lt;br&gt;Defines OS with pre-defined packageManager like &lt;b&gt;npm FROM node:alpine&lt;/b&gt;&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=1;fillColor=#1ba1e2;fontColor=#ffffff;strokeColor=#006EAF;" vertex="1" parent="3Insr8xSuDvDj9gULkQm-109">
+          <mxGeometry x="210.00000000000003" y="115" width="510" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="3Insr8xSuDvDj9gULkQm-59" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;&lt;b&gt;&lt;font color=&quot;#000000&quot;&gt;WORKDIR&lt;/font&gt;&lt;/b&gt;&lt;br&gt;It makes this Directory as &lt;b&gt;PWD&lt;/b&gt; (Present Working Directory) at every login&lt;br&gt;&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=1;fillColor=#1ba1e2;fontColor=#ffffff;strokeColor=#006EAF;" vertex="1" parent="3Insr8xSuDvDj9gULkQm-109">
+          <mxGeometry x="210.00000000000003" y="184" width="510" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="3Insr8xSuDvDj9gULkQm-60" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;endFill=0;startArrow=block;startFill=1;edgeStyle=elbowEdgeStyle;" edge="1" parent="3Insr8xSuDvDj9gULkQm-109" source="3Insr8xSuDvDj9gULkQm-59">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="986" y="236" as="sourcePoint" />
+            <mxPoint x="1036" y="186" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="790" y="200" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3Insr8xSuDvDj9gULkQm-61" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;&lt;b&gt;&lt;font color=&quot;#000000&quot;&gt;COPY&lt;/font&gt;&lt;/b&gt;&lt;br&gt;It will Copy all the data located at &lt;b&gt;Left&lt;/b&gt;Side Dir to &lt;b&gt;Right&lt;/b&gt;Side Dir&lt;br&gt;&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=1;fillColor=#1ba1e2;fontColor=#ffffff;strokeColor=#006EAF;" vertex="1" parent="3Insr8xSuDvDj9gULkQm-109">
+          <mxGeometry x="210.00000000000003" y="250" width="510" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="3Insr8xSuDvDj9gULkQm-63" value="" style="endArrow=classic;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;dashed=1;strokeWidth=2;rounded=0;fontStyle=1;dashPattern=1 4;strokeColor=default;edgeStyle=elbowEdgeStyle;" edge="1" parent="3Insr8xSuDvDj9gULkQm-109" target="3Insr8xSuDvDj9gULkQm-61">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1032" y="227" as="sourcePoint" />
+            <mxPoint x="812" y="297" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="820" y="250" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3Insr8xSuDvDj9gULkQm-65" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;&lt;b&gt;&lt;font color=&quot;#000000&quot;&gt;RUN&lt;/font&gt;&lt;/b&gt;&lt;br&gt;It will run command while docker building Process&lt;br&gt;&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=1;fillColor=#1ba1e2;fontColor=#ffffff;strokeColor=#006EAF;" vertex="1" parent="3Insr8xSuDvDj9gULkQm-109">
+          <mxGeometry x="210.00000000000003" y="319" width="510" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="3Insr8xSuDvDj9gULkQm-66" value="" style="endArrow=classic;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;dashed=1;strokeWidth=2;rounded=0;fontStyle=1;dashPattern=1 4;strokeColor=default;edgeStyle=elbowEdgeStyle;elbow=horizontal;" edge="1" parent="3Insr8xSuDvDj9gULkQm-109" target="3Insr8xSuDvDj9gULkQm-65">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1039" y="267" as="sourcePoint" />
+            <mxPoint x="727" y="320" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="850" y="290" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3Insr8xSuDvDj9gULkQm-67" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;&lt;b&gt;&lt;font color=&quot;#000000&quot;&gt;CMD&lt;/font&gt;&lt;/b&gt;&lt;br&gt;This command Executes byDefault , when you launch the build image&lt;br&gt;&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=1;fillColor=#1ba1e2;fontColor=#ffffff;strokeColor=#006EAF;" vertex="1" parent="3Insr8xSuDvDj9gULkQm-109">
+          <mxGeometry x="210.00000000000003" y="390" width="510" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="3Insr8xSuDvDj9gULkQm-68" value="" style="endArrow=classic;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;dashed=1;strokeWidth=2;rounded=0;fontStyle=1;dashPattern=1 4;strokeColor=default;edgeStyle=elbowEdgeStyle;elbow=horizontal;" edge="1" parent="3Insr8xSuDvDj9gULkQm-109" target="3Insr8xSuDvDj9gULkQm-67">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1039" y="360" as="sourcePoint" />
+            <mxPoint x="727" y="413" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="880" y="400" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3Insr8xSuDvDj9gULkQm-69" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;&amp;nbsp;RUN &lt;/b&gt;vs &lt;b&gt;CMD&lt;/b&gt;&lt;br&gt;&lt;br&gt;&amp;nbsp;RUN is an image build step, the state of the container after a RUN command will be committed to the container image. A Dockerfile can have many RUN steps &lt;br&gt;that layer on top of one another to build the image. CMD is the command &lt;br&gt;the container executes by default when you launch the built image.&lt;/font&gt;" style="text;html=1;strokeColor=#10739e;fillColor=#b1ddf0;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=1;arcSize=7;" vertex="1" parent="3Insr8xSuDvDj9gULkQm-109">
+          <mxGeometry y="684" width="520" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="3Insr8xSuDvDj9gULkQm-75" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="3Insr8xSuDvDj9gULkQm-109" source="3Insr8xSuDvDj9gULkQm-65" target="3Insr8xSuDvDj9gULkQm-69">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="120.00000000000003" y="349" />
+              <mxPoint x="120.00000000000003" y="570" />
+              <mxPoint x="150.00000000000003" y="570" />
+              <mxPoint x="150.00000000000003" y="720" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3Insr8xSuDvDj9gULkQm-74" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="3Insr8xSuDvDj9gULkQm-109" source="3Insr8xSuDvDj9gULkQm-67" target="3Insr8xSuDvDj9gULkQm-69">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="180.00000000000003" y="420" />
+              <mxPoint x="180.00000000000003" y="570" />
+              <mxPoint x="150.00000000000003" y="570" />
+              <mxPoint x="150.00000000000003" y="720" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="3Insr8xSuDvDj9gULkQm-76" value="Vs" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="3Insr8xSuDvDj9gULkQm-74">
+          <mxGeometry x="0.0333" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

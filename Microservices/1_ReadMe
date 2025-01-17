@@ -1,0 +1,5 @@
+Index
+
+1. EventBus   -> For Understanding Full on Going centralized Architecture of Servers see Understanding Event Bus
+2. Docker     -> For Understanding Images of Servers, Automates of running an image , Pushing images to Docker hub see Understading Docker
+3. Kubernetes -> For Understanding Pods, Deployments, Services (ClusterIP,NodePort,LoadBalancer) ,Skuffold (Automates kubectl Workflow) see Understanding Kubernetes_Minikube

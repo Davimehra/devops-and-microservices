@@ -1,0 +1,89 @@
+pipeline {
+
+    agent any
+/*
+	tools {
+        maven "maven3"
+    }
+*/
+    environment {
+        docker_server_registry_1 = "davimehra/restaurant_server_auth"
+        docker_registry_credential_1 = 'dockerhub'
+        helm_webEnvironment_1 = 'prod'
+        kubernetes_namespace_1 = 'prod'
+        releaseName_1 = 'restaurant-server-auth'
+        helm_path_1 = 'backend/main/restaurant-server-auth/helm'
+        dockerFile_path_1='./backend/main/restaurant-server-auth/'
+        DOCKER_NODE_ENV_1='prod'
+        
+        docker_server_registry_2 = "davimehra/restaurant_server_expiration"
+        docker_registry_credential_2 = 'dockerhub'
+        helm_webEnvironment_2 = 'prod'
+        kubernetes_namespace_2 = 'prod'
+        releaseName_2 = 'restaurant-server-expiration'
+        helm_path_2 = 'backend/main/restaurant-server-expiration/helm'
+        dockerFile_path_2='./backend/main/restaurant-server-expiration/'
+        DOCKER_NODE_ENV_2='prod'
+        
+        docker_server_registry_3 = "davimehra/restaurant_server_interservice"
+        docker_registry_credential_3 = 'dockerhub'
+        helm_webEnvironment_3 = 'prod'
+        kubernetes_namespace_3 = 'prod'
+        releaseName_3 = 'restaurant-server-interservice'
+        helm_path_3 = 'backend/main/restaurant-server-interservice/helm'
+        dockerFile_path_3='./backend/main/restaurant-server-interservice/'
+        DOCKER_NODE_ENV_3='prod'
+        
+        docker_server_registry_4 = "davimehra/restaurant_client_image"
+        docker_registry_credential_4 = 'dockerhub'
+        helm_webEnvironment_4 = 'prod'
+        kubernetes_namespace_4 = 'prod'
+        releaseName_4 = 'restaurant-client'
+        helm_path_4 = 'client/helm'
+        dockerFile_path_4='./client/'
+        DOCKER_NODE_ENV_4='prod'
+    }
+
+    stages{
+
+        stage('Building -- restaurant-server-auth --via-- Docker') {
+          steps {
+            script {
+              echo " Building Docker Container using dockerfile , imageName = ${docker_server_registry_4} "
+              dockerServerImage = docker.build("${docker_server_registry_4}:V$BUILD_NUMBER","--build-arg DOCKER_NODE_ENV=${DOCKER_NODE_ENV_4} ${dockerFile_path_4}")
+            }
+          }
+        }
+
+        stage('Uploading -- restaurant-server-auth --to-- DockerRegistry'){
+          steps{
+            script {
+              echo "Uploading Docker Image to registry"
+              docker.withRegistry('', docker_registry_credential_4) {
+                dockerServerImage.push("V$BUILD_NUMBER")
+                dockerServerImage.push("latest")
+              }
+            }
+          }
+        }
+
+
+        stage('Removing -- restaurant-server-auth --unUsed-- DockerImage ') {
+          steps{
+            echo "Removing unwanted docker images"
+            sh "docker rmi $docker_server_registry_4:V$BUILD_NUMBER"
+          }
+        }
+
+        stage('Deploying -- restaurant-server-auth --In-- Kubernetes --Via-- Helm') {
+          agent {label 'KOPS'}
+            steps {
+              echo "Deploying kubernetes resources via helm on agent 'KOPS' machine"
+              sh "helm upgrade --install --force ${releaseName_4} ${helm_path_4} --set server_image=${docker_server_registry_4}:V${BUILD_NUMBER} --set RUNTIME_ENV=${helm_webEnvironment_4} --create-namespace --namespace ${kubernetes_namespace_4}"
+            }
+        }
+        
+    }
+
+
+}

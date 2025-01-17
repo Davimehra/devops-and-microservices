@@ -1,0 +1,60 @@
+
+kubectl exec -it pod/PodName -- /bin/sh
+mongosh -u admin -p password
+
+Initializing replicaSets with primary and secondary members
+
+	rs.initiate(
+	{
+		_id: "rs0",
+		members: [
+			{_id:0, host:"mongodb-statefulset-0.mongodb-svc.default.svc.cluster.local:27017" },
+			{_id:1, host:"mongodb-statefulset-1.mongodb-svc.default.svc.cluster.local:27017" },
+			{_id:2, host:"mongodb-statefulset-2.mongodb-svc.default.svc.cluster.local:27017" }
+			]
+	}
+	)
+
+For ReConfiguring the implimentation .
+
+for reconfig
+
+	rs.reconfig(
+	{
+		_id: "rs0",
+		version: 2, term: 2,
+		members: [
+			{_id:0, host:"mongodb-statefulset-0.mongodb-svc.default.svc.cluster.local:27017" },
+			{_id:1, host:"mongodb-statefulset-1.mongodb-svc.default.svc.cluster.local:27017" },
+			{_id:2, host:"mongodb-statefulset-2.mongodb-svc.default.svc.cluster.local:27017" }
+			]
+	}
+	)
+
+
+
+Add members Sperately
+
+	rs.add({_id: 4, host: "mongodb-statefulset-1.mongodb-svc.default.svc.cluster.local:27017", priority: 0, hidden: true})
+
+
+
+To manipulate memebers priority (more the priority more chance to become master -primary replica)
+
+	conf = rs.conf()
+	conf.members[0].priority = 1;
+	conf.members[1].priority = 0.3;
+	conf.members[2].priority = 0.4;
+
+	rs.reconfig(conf);
+
+
+
+
+
+Reference
+
+https://phoenixnap.com/kb/kubernetes-mongodb
+
+Making members primary
+https://www.mongodb.com/docs/manual/tutorial/force-member-to-be-primary/

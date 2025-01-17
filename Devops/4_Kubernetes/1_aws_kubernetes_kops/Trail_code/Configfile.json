@@ -1,0 +1,30 @@
+{
+  "mainDetails": [
+    {
+      "name": "client",
+      "image": "davimehra/web_star_client",
+      "exposedPort": 80,
+      "forwardingPort": 3000
+    },
+
+    {
+      "name": "server",
+      "image": "davimehra/web_star_server",
+      "exposedPort": 80,
+      "forwardingPort": 5000
+    }
+  ],
+
+  "CommonDetails": {
+    "networkDetails": {
+      "host": "webstar",
+      "domain": "basic-dev-ops-site-trial.co",
+      "endpoint": "webstar.basic-dev-ops-site-trial.co"
+    }
+  },
+
+  "helmValues": {
+    "client_image": "web_star_client_image",
+    "server_image": "web_star_server_image"
+  }
+}

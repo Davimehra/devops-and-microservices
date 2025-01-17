@@ -1,0 +1,177 @@
+Before Understandin about Ingress lets under stand
+1. Internal Service (ClusterIP)
+2. External Service (LoadBalancer,NodePort)
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+What is Internal Service ?
+Internal Service is an service which is used to access pod by other pod but inside same cluster, via an static service name
+If Internal Service like (ClusterIP) does'nt exist then there is no solid solution to communicate with pod via dynamic IP address ,which changes with any activity on pod like (Deletion,restating,updating the pods ,etc)
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+What is Extenal Service ?
+External Service is an service which is used for handling or directing the outer world traffic to our local kubernetes machine, 
+so for that kubernetes need to open some ports and those ports are NodePorts
+NodePorts are in the 30000-32767 range by default, which means a NodePort is unlikely to match a service's intended port (for example, 8080 may be exposed as 31020)
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Why is it difficult to manage External Service ?
+Lets understand with some example, Imagine you have 3 Services inside an single cluster
+
+1. Shopping  in (Pod1)
+2. Chatting  in (Pod2)
+3. Browsing  in (Pod3)
+
+Now these services need to be exposed to outer world, so lets start assigning them NodePorts
+
+
+Shopping
+containerPod = 3429         (Lets open 3429 port of Shopping Service Container inside an pod )
+
+port         = 3000         (Let service handle at port 3000 for any incoming request)
+targetPort   = 3429         (Now put here the port 3429, to which the service will forward request port opened for shopping containerPod which is also 3429)
+nodePort     = 31023        (This is the port where we will accept the outer world request (External Service will be handled at this port))
+
+Chatting
+containerPod = 2341         (Lets open 3429 port of Chatting Service Container inside an pod )
+
+port         = 3000         (Let service handle at port 3000 for any incoming request)
+targetPort   = 2341         (Now put here the port 3429, to which the service will forward request port opened for shopping containerPod which is also 3429)
+nodePort     = 30014        (This is the port where we will accept the outer world request (External Service will be handled at this port))
+
+Browsing
+containerPod = 4223         (Lets open 3429 port of Browsing Service Container inside an pod )
+
+port         = 3000         (Let service handle at port 3000 for any incoming request)
+targetPort   = 4223         (Now put here the port 3429, to which the service will forward request port opened for shopping containerPod which is also 3429)
+nodePort     = 30921        (This is the port where we will accept the outer world request (External Service will be handled at this port))
+
+	Conclusion
+
+Shopping --> http://192.168.49.2:31023
+Chatting --> http://192.168.49.2:30014
+Chatting --> http://192.168.49.2:30921
+
+These all services are opened but cannot be used by this by any site we create,
+rather than this there must be an centralised way to use all these service by simple URL,
+So here come the Ingress.
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+What is Ingress ?
+ The Ingress concept lets you map traffic to different backends based on rules you define via the Kubernetes API.
+ Ingress exposes HTTP and HTTPS routes from outside the cluster to services within the cluster. Traffic routing is controlled by rules defined on the Ingress resource.
+ 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+What is Ingress Controller ?
+In order for the Ingress resource to work, the cluster must have an ingress controller running.
+
+Unlike other types of controllers which run as part of the kube-controller-manager (kube-system (NS)) binary, Ingress controllers are not started automatically with a cluster.
+There are many third party Ingress Controller present in market.Kubernetes as a project support and maintains AWS,GCE and nginx ingress Controller
+Kubernetes have its own Ingress Controller -> nginx ingress controller
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Difference Between Ingress and Ingress Controller ?
+
+Lets under stand by our own experience, Imagine we are creating an service which have 3 routing paths
+/api/shopping
+/api/browsing
+/api/chatting 
+
+Now to handle the request at each routing path we need some kind of controllers which will be present at the endpoint of each routing path
+/api/shopping  --> ShoppingController (inside routes)
+/api/browsing  --> BrowsingController (inside routes)
+/api/chatting  --> ChattingController (inside routes)
+
+So Now compare this example with Ingress and Ingress Controller
+Here all the RoutingRules Defined here are in Ingress
+Here all the Controllers present at the endpoint of this routes are managed by IngressController
+
+For more Detail go to
+https://kubernetes.io/docs/concepts/services-networking/ingress/
+https://kubernetes.io/docs/concepts/services-networking/ingress-controllers/
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+How to Install Ingress Controller? 
+
+For Minikube 
+minikube addons enable ingress
+
+Verify it by Checking the new Namespace of ingress-nginx
+kubectl get pods -n ingress-nginx
+
+For other environment go to --> https://kubernetes.github.io/ingress-nginx/deploy/
+
+
+
+*****************************************************************************************************************************************
+ 										NOTE
+*****************************************************************************************************************************************
+ 
+Ingress will be deployed in ingress controller pod presend in NS (ingress-nginx)
+other pods will be using this ingress controller pod for its services
+and this ingress controller will be running at default port 80 (service name -> default-http-backend) in minikube
+if some random routes are tried then minikube will forward that requests to ingress and if ingress-nginx donot handle that routes in routing rules 
+then it will forward it to default-http-backend at port 80 to handled by user
+and user can create a service named (default-http-backend) at port 80 and return back any thing
+
+So structure will be like this
+
+Ingress Controller Pod -> Project ingress-nginx -> Project service -> Project Pod
+
+Ingress Controller contains all Controllers which ingress-nginx will use
+ingress-nginx is responsible for evaluate all routing Rules,manages reDirections to services, entry Point to Cluster.
+ingress-nginx can be created by manifest (YAML) File
+
+ingress-nginx is nothing without Ingress Controller Pod
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Lets Understand Deployemnt of Ingress-nginx Controller (via manifest File)
+
+
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: mongodb-express-ingress
+  namespace: default
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+spec:
+  rules:
+  - host: mongoexpress.com
+    http:
+      paths:
+      - path: /
+        pathType: Exact  
+        backend:
+          service:
+            name: mongodb-express-srv
+            port: 
+              number: 8081
+
+
+
+Now after running all the component in infra/k8s 
+Go to etc/hosts  --> add 192.168.49.2    mongoexpress.com
+this will redirect any request from mongoexpress.com to 192.168.49.2  which is an minikube ip 
+minikube most top central point is ingress component which is listening at port 80
+
+now mongoexpress.com will be going to 
+minikube which hold 
+ingress at port 80 and then
+ingress-nginx controller will check the routing rules 
+then it will forward the request to service with the port number defined in rule
+eg -> mongodb-express-srv:8081
+and mongodb-express-srv is listening at 8081 and 
+then it will forward that request to port 8081 of mongo-express pod
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+How to add https or tls Certificate?
+Check the Picture outside
+
+
+

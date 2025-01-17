@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mongoexpress-depl
+spec:
+  selector:
+    matchLabels:
+      app: mongoexpress-app
+  template:
+    metadata:
+      labels:
+        app: mongoexpress-app
+    spec:
+      containers:
+        - name: mongoexpress-container
+          image: mongo-express
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
+          ports:
+            - containerPort: 8081
+          env:
+            - name: "ME_CONFIG_MONGODB_ENABLE_ADMIN"
+              value: "true"
+            - name: "ME_CONFIG_MONGODB_PORT"
+              value: "27017"
+            - name: ME_CONFIG_MONGODB_SERVER
+              value: "mongodb-svc"

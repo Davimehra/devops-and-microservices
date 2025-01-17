@@ -1,0 +1,16 @@
+# annotations:
+#   prometheus.io/path: /metrics
+#   prometheus.io/scrape: "true"
+
+# [mongodb[+srv]://][user:pass@]host1[:port1][,host2[:port2],...][/database][?options]
+mongodb:
+  uri: "mongodb://mongodb-service:27017"
+
+serviceMonitor:
+  enabled: true
+  additionalLabels:
+    release: prometheus
+# podAnnotations: {}
+#  prometheus.io/scrape: "true"
+#  prometheus.io/port: "9216"
+#  prometheus.io/path: /metrics

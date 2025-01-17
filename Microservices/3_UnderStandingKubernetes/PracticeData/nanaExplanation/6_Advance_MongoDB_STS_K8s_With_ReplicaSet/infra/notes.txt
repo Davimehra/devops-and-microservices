@@ -1,0 +1,74 @@
+StatefulSets vs StatelessSets
+
+Stateless are the servers
+it does't require any data to be stored in it
+
+Statefull are the databases
+it required an persistent data to be stored in it
+
+
+Statefull benifits
+
+1. Seperate PVs will be assign for each replicated pod (to maintain data consistancy)
+2. Ordered Pods , the replicated pods will be initialted in ordered format
+3. Sticky Identity, the name of the pods will be very familary like (mongo-0, mongo-1,mongo-2 ...etc)
+4. Stable DNS , if we create HeadLess-Service (by manipulating - clusterIP: None)
+
+
+
+
+MongoDB StatefulSets with ReplicaSets
+
+1. This mechanism will assign concept of Master and Slaves
+ 	Master can be any one replicatedPod           (basically - mongo-0)
+ 	Slaves can be as many replicatedPod you want  (like - mongo-1,mongo-2 ....etc)
+
+ImportantNote
+    If you want to deploy replicas in standalone environment check this video index 2
+   (using 3 replicas - using cmd like - rs.status(), rs.initiate(), rs.addmember())
+  
+2. To access that specific MasterPod of replicaSets we need an headless service
+   ** TO make service an Headless-Service = set clusterIP: None
+      Example
+      
+      apiVersion: v1
+      kind: Service
+      metadata:
+        name: mongo-svc
+      spec:
+        selector:
+          app: mongo-app
+        type: ClusterIP
+        clusterIP: None
+        ports:
+          protocol: TCP
+          port: 27017
+          targetPort: 27017 
+          
+     Usage & Explanation
+     
+     Now in our Kubernetes DNS we can directly go to specific POD without LoadBalancing if we defined service as Headless
+     this will make an entry for eachPod address in DNS
+     
+   Eg-       mongo-0.mongo.default.svc.cluster.local:27017
+     
+  syntax -   PodName.ServiceName.NameSpaceName.svc.cluster.local:AccessPort_Container
+		
+* In kubernetes via docker images you can simply use ENV variables to make any pod Primary or Secondary
+
+
+
+
+
+Difference between LoadBalancing and Headless Service ?
+LoadBalancer will send the request to any random server of same type described in targetGroups
+Headless Service will send request to specific target registed in DNS
+
+
+
+
+
+
+Reference Video
+1. https://www.youtube.com/watch?v=eUa-IDPGL-Q
+2. https://www.youtube.com/watch?v=gChzfhVGqp8&list=PLn5P7-dIJACCt3odkoLASfaOSs59cHNjC&index=6

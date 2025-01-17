@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: task-pv-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: task-pv
+  template:
+    metadata:
+      labels:
+        name: task-pv
+    spec:
+      volumes:
+      - name: task-pv-storage
+        persistentVolumeClaim:
+          claimName: task-pv-claim
+      containers:
+        - name: task-pv-container
+          image: nginx
+          volumeMounts:
+            - mountPath: "/usr/share/nginx/html"
+              name: task-pv-storage
+          ports:
+            - containerPort: 80
+              name: "http-server"
+
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-http-srv
+spec:
+  selector:
+    name: task-pv
+  type: ClusterIP
+  ports:
+    - name: httpport
+      protocol: TCP
+      port: 81
+      targetPort: 80
+        
+

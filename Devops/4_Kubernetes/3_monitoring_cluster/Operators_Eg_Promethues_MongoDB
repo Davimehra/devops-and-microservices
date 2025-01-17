@@ -1,0 +1,252 @@
+Terms Used in this Note
+
+1. sts ---- statefull sets
+2. deploy - deployments
+3. cm ----- configMaps
+4. svc ---- Service
+5. dm  ---- DaemonSet
+4. secret 
+
+Commands Used
+
+Accessing internalIp (ClusterIP)
+  $ kubectl port-forward deployment deploymentName from_Port:to_Inside_Container_Port
+
+  or
+  $ kubectl port-forward service serviceName from_Port:to_Inside_Container_Port
+  
+  or via exposing to NodePort
+  $ kubectl expose deployment deploymentName --type=NodePort --name=PortName --port=sourcePort --target-port=TargetPort_inside_container
+  
+  $ minikube service PortName
+  
+Saving Values into File via helm
+
+  $ helm show values helm-Chart > valueFileName.yaml
+
+installing helm-chart via values
+
+  $ helm install ReleaseName helm-chart -f valueFileName.yaml
+
+---------------------------------------------------------------------------------------------------
+
+Operators 
+You can use Kubernetes to automate deploying and running workloads, and you can automate how 
+Kubernetes does that. Kubernetes' operator pattern concept lets you extend the cluster's behaviour
+without modifying the code of Kubernetes itself by linking controllers to one or more custom
+resources
+
+
+Opertors vs controllers ?
+Controllers are well-suited for managing native Kubernetes objects and maintaining the desired 
+state of built-in resources. In contrast, operators are designed to manage application-specific 
+tasks and resources, offering a higher level of customization and domain-specific knowledge
+
+
+
+Operators in Different States
+
+► 1. StateLESS applications on Kubernetes 🚀
+Kubernetes can manage the complete lifecycle of stateless applications in a fully automated way,
+ because these applications don’t have business logic for deployment.
+So basically, once you deployed the application, you don’t have to sit there and control that your
+ application is running properly.
+
+► 2. StateFUL applications WITHOUT Operator 🤯
+For stateful applications, like databases, the whole process isn’t as straightforward.
+They need more "hand-holding" during its whole lifecycle, because the replicas of stateful apps
+ aren't identical.
+
+So, Kubernetes natively doesn’t have all the knowledge required 🤷🏻‍♂️  to automate the process of
+ deploying every single stateful application. That’s why these kind of applications require manual
+ intervention - people who "operate" these applications.
+
+► 3. StateFUL applications WITH Operator 🦄
+Operator solves this problem and basically replaces this "human" operator with a "software" operator.
+At its core it has the same control loop mechanism that Kubernetes has, that watches for changes 
+in the application state.
+It also uses CRDs, which is basically a custom K8s component. So, it takes the basic Kubernetes
+ resources and its controller concept as a foundation to build upon, and on top of that includes
+  application-specific knowledge to automate the entire life cycle of the application it "operates".
+
+***************************************************************************************************
+Operators example via Prometheus Monitoring
+In this
+
+1. Setup Promethus Monitoring in Kubernetes Cluster
+   a. How to deploy the different parts in Kubernetes cluster ?
+      There are two ways
+      i. Creating all configuration YAML files of Promethus  (inefficient way, not recomended)
+      	 (Statefull set, Alert Manager, Grafana Deployments, all configMaps, all secrets) yourself
+      
+      ii. Using Operators  (some but Efficient way)
+	   Prometheus Operator is Manager of all Prometheus components
+	   
+	   explanation - Like deployments and statefull-Sets are responsible to maintain there 
+	                 replicas 
+	                 similarly Prometheus Operator manages the combination of all components
+	                 (svc, deploy, sts) as one unit
+	   execution -   a. Find Prometheus operator
+	                 b. Deploy in K8s cluster  
+      
+      iii. Using Helm Chart to Deploy operator
+                 it is maintained by Helm Community
+           a. Helm:     will do the initial Setup (K8s Cluster- cm, pod, svc, secret, sts)
+           b. Operator: will then Manage running Prometheus Setup
+
+2. Option Selected iii (Using Helm Chart)
+
+3. Clean Minikube state - check using- $ kubectl get pod
+   If not install Helm Goto
+   ( https://helm.sh/docs/intro/install/ )
+   
+4. Goto Prometheus Operator installation via Helm 
+   ( https://gitlab.com/nanuchi/youtube-tutorial-series/-/blob/master/prometheus-exporter/install-prometheus-commands.md )
+   
+5. Wait for 5 to 10 mins - Check if everything is running 
+   $ kubectl get all
+   
+6. Explanation of all components
+
+   1. statefullset.apps                    are statefull sets
+      a. alertmanager-prometheus-kube-prometheus-alertmanager
+         it is an alert manager 
+         
+      b. prometheus-prometheus-kube-prometheus-prometheus
+         it is an operator or you can say (Prometheus Server - Retrival ,Storage,Http Server)
+      	 
+   2. deployements.apps                    are deployments
+      a. prometheus-grafana                   (database)
+      b. prometheus-kube-prometheus-operator  (deployment for Prometheus Server and alertManager)
+      c. prometheus-kube-state-metrics        
+         - own helm chart
+         - dependency of own helm-chart
+         - scrapes k8s components 
+           ( it check health all the kubernetes components and give metric )
+   3. daemonset.apps
+      i.  DaemonSet is an component which will run on every single WorkerNode
+      ii. Node Exporter component of Prometheus will help to 
+          a. connect to server from worker node 
+          b. translates WorkerNode metrics to Prometheus Metrics like CPU-USAGE, Load-on-server
+   4. services
+   	Total 9 services which each components have it's own
+   5. pods
+      from Deployments and StatefulSets
+   
+   There will be 
+   * Montoring Stack
+   * Configuration for your K8s cluster
+   * Worker Nodes monitored       (via daemonSet - NodeExport)
+   * K8s components monitored   
+   All these configurations are stored in ConfigMaps (cm)
+   
+   
+   
+   ConfigMaps
+   run -> $ kubectl get configmap
+    - configurations for different parts
+    - managed by opertor
+    - how to connect to  default metrics
+      	 
+   Secrets
+   run-> $ kubectl get secrets
+    - for Grafana
+    - for Prometheus
+    - for Operator
+    
+   requirements
+    - certificates
+    - username & passwords
+    etc
+    
+   CRDs
+    Custom Resouce Definations 
+           it is extension of Kubernetes API
+    run- $ kubectl get crds
+    
+Service Monitor
+
+these are custom k8s components used to verify health via endpoint Connection
+
+
+7. Initialize MongoDB containerPod via Deployment and create Service for :27017
+   CheckOut file "test-mongo.yaml"
+
+8. Install "mongodb-exporter" for prometheus to understand 
+   the logs of mongodb Container (endpoint /metrics) 
+   * install via helm-charts
+   Check link of helm-chart - https://github.com/prometheus-community/helm-charts
+   Goto folder                charts/prometheus-mongodb-exporter/
+   
+   Now run ' Get Repository Info ' Commands
+   Now first configure values of helm-chart of mongodb-exporter
+   
+   $ helm show values prometheus-community/prometheus-mongodb-exporter > mongo-exporter-value.yaml
+   
+   $ code mongo-exporter-value.yaml
+   
+   -> Delete all configuration
+   -> Now Paste & save
+   
+      mongodb:
+  	uri: "mongodb://mongodb-service:27017"
+
+      serviceMonitor:
+        enabled: true
+        additionalLabels:
+          release: prometheus
+          
+   
+   -> now install mongodb-exporter helm-chart with these values
+   
+   General Syntax 
+   -> $ helm install ReleaseName ChartName -f ValueFileName 
+ 
+   -> $ helm install mongodb-exporter prometheus-community/prometheus-mongodb-exporter -f mongo-exporter-value.yaml
+   
+9. Check exporter Pod & Check exporter Service First
+10. Check exporter service monitor
+    $ kubectl get servicemonitor
+
+11. Check Targets in - Prometheus UI   (Can do port-forwarding to go to UI)
+    $ kubectl port-forward service/prometheus-kube-prometheus-prometheus 9090:9090
+    
+    - Goto -> http://127.0.0.1:9090 
+      Goto    Status -> targets
+      Check   mongodb endpoint is saved into targets at /metrics at mongodb-exporter at port:9216
+
+12. Add Dashboard in grafana
+    -> Port Forward (so access inside service)
+    -> $ kubectl port-forward service/prometheus-grafana 3000:80
+    -> Goto http://127.0.0.1:3000
+    -> Goto Dashboard -> click on 'new' -> Click on Import -> Paste '2583' Id -> Click Load
+    -> Save this to Dashboard
+
+        	 
+      	 
+      	 
+      	 
+      	 
+      	 
+      	 
+      	 
+      	 
+      	 
+      	 
+      	 
+      	 
+      	 
+      	 
+      	 
+      	 
+      	 
+      	 
+      	 
+      	 
+      	 
+      	 
+      	 
+      	 
+      	 
+      	 
+      	 

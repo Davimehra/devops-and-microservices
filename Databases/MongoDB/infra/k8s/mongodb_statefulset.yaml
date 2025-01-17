@@ -1,0 +1,85 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: mongodb-statefulset
+spec:
+  replicas: 2
+  serviceName: mongodb-svc
+  selector:
+    matchLabels:
+      app: mongodb-app
+  volumeClaimTemplates:
+    - metadata:
+        name: mongodb-volume
+      spec:
+        storageClassName: mongodb-sc
+        accessModes: [ReadWriteOnce]
+        resources:
+          requests:
+            storage: 1Gi
+  template:
+    metadata:
+      labels:
+        app: mongodb-app
+        environment: test
+    spec:
+      volumes:
+        - name: mongodb-config-map
+          configMap:
+            name: mongodb-configmap
+        - name: initdb
+          emptyDir: {}
+      initContainers:
+      - name: init-mongodb
+        image: mongo
+        imagePullPolicy: Always
+        volumeMounts:
+          - name: mongodb-config-map
+            mountPath: "/mnt/config-map"
+          - name: initdb
+            mountPath: /docker-entrypoint-initdb.d
+        command: 
+          - "bash"
+          - "-c"
+          - |
+            set -ex
+            echo "Starting init-mongodb"
+            [[ `hostname` =~ -([0-9]+)$ ]] || exit 1
+
+            ordinal=${BASH_REMATCH[1]}
+
+            if [[ $ordinal == 0 ]]; then
+              cp /mnt/config-map/primary.js /docker-entrypoint-initdb.d
+            fi
+      restartPolicy: Always
+      containers:
+        - name: mongodb-app-container
+          image: mongo
+          args: ["--dbpath", "/data/db"]
+          ports:
+            - containerPort: 27017
+          volumeMounts:
+            - name: mongodb-volume
+              mountPath: "/data/db"
+            - name: mongodb-config-map
+              mountPath: "/mnt/config-map"
+            - name: initdb
+              mountPath: /docker-entrypoint-initdb.d
+          env:
+            - name: MONGO_INITDB_ROOT_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: mongodb-secret
+                  key: mongodb_username
+            - name: MONGO_INITDB_ROOT_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  key: mongodb_password
+                  name: mongodb-secret
+            - name: MONGO_INITDB_DATABASE
+              value: students
+          command:
+            - mongod
+            - "--bind_ip_all"
+            - "--replSet"
+            - rs0

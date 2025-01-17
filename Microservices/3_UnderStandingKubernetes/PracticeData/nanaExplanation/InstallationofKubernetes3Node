@@ -1,0 +1,23 @@
+Kubernetes Notes
+Kubernetes works with all container runtimes that implement a standard known as the 
+Container Runtime Interface (CRI).
+This is essentially a standard way of communicating between Kubernetes and the container runtime, any any runtime that supports this standard automatically works with Kubernetes.
+
+so kubelet -> CRI -> Runtime Container (like Docker) 
+Kubelet will talk to the CRI and CRI will talk further to the Runtime Container
+
+
+Note why Kubernetes deprecated Docker in Latest release ?
+
+Docker does not implement the CRI, so Kubernetes implemented the Dockershim,
+an additional layer to seve as an interface between Kubernetes and Docker. 
+Now however, there are plenty of runtimes available that implement the CRI, and it no longer make sense for Kubernetes to maintain special support for Docker.
+ 
+Docker with Kubernetes
+
+Docker have dockerVolumes, dockerNetwork, dockerD as container runtime
+So Kubernetes need to interact with only dockerD component of Docker
+
+
+Containerd vs dockerd ?
+

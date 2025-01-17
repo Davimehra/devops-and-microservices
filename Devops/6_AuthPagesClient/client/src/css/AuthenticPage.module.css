@@ -1,0 +1,58 @@
+.MainContainer {
+    min-height: 100vh;
+    min-width: 100vw;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ReferingContainer {
+    min-height: 50vh;
+    min-width: 30vw;
+}
+
+
+.AuthenticContainer {
+    display: flex;
+    min-height: inherit;
+    min-width: inherit;
+    flex-direction: column;
+    gap: 1vh;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px grey;
+    background-color: lightblue;
+}
+
+.AuthenticContainer>p {
+    font-size: 30px;
+}
+
+.AuthenticContainer>div {
+    font-size: 20px;
+}
+
+.AuthenticContainer>input {
+    min-width: max-content;
+    min-height: 5vh;
+}
+
+.AuthenticContainer>input::placeholder {
+    font-size: 15px;
+}
+
+.AuthenticContainer>input:focus {
+    background-color: rgb(233, 231, 231);
+    outline-color: black;
+    outline: none;
+    border: 1px solid green;
+    font-size: 20px;
+
+}
+
+.AuthenticContainer>button {
+    min-width: max-content;
+    min-height: 8vh;
+}

@@ -1,0 +1,29 @@
+This step will create necessory secrets with base64 data values
+--> kubectl apply -f secret.yaml
+
+This step will create configMap for this cluster with data with planText values
+--> kubectl apply -f mongoExpress-ConfigMap.yaml
+
+This step will create deployment for mongo database
+--> kubectl apply -f mongo-depl.yaml
+
+This step will create deployment for mongoExpress             (which is use login username and password for mongo database , and  also the service name of mongo database deployment)
+--> kubectl apply -f mongoExpress-depl.yaml
+
+
+This step will list out all running services with output in wide information mode
+--> kubectl get service -o wide
+
+Now COPY the name of LOADBALANCER service created in mongoExpress Service for exposing it to the minikube to give it and extenal IP Address
+
+
+This step will asign an ExtenalIP address by minikube to the LOADBALANCER service which is open at 30000 port
+--> minikube service  COPIED_LOADBALANCER_SERVICE_NAME
+
+
+
+
+BOOM++++++++++++++++++++++++++++++++++++++
+new Browser window will open
+
+

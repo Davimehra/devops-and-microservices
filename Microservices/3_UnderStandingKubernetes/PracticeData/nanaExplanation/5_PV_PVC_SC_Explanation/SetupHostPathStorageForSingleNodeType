@@ -1,0 +1,41 @@
+# create persistance volume type LOCAL-STORAGE (using hostPath)
+# This type is used for single-node cluster kubernetes confiration like (minikube)
+# Check your auto generated storageClass by --> kubectl get storageclass
+# You will see k8s.io/minikube-hostpath act as provisioner (will provide storage is required)
+# PV -> Persistent Volume Configuration 
+# PV are not dependent on NS (Namespace) 
+
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: example-volume
+  labels:
+    type: local
+spec:
+  capacity:
+    storage: 1Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Delete
+  storageClassName: standard
+  hostPath:
+    path: "/mnt/data"
+
+
+
+# PVC -> Persistent Volume Claim 
+# It is the way container in pod declare the need for Persistent Volume by creating PVC manifest
+# Example with simple claim 
+
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: example-claim
+spec:
+  storageClassName: standard
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 250Mi

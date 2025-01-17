@@ -1,0 +1,23 @@
+In this Example we will be creating
+0. create configMap and secret component located outside the pod            
+   (for collecting centralized data like database_Url,mongo_userName,mongo_password ,etc) (helps to use this data in future)
+1. mongo deployment 
+2. internal Service for mongodb deployment          (using ClusterIP for MongoExpress to communicate)
+3. mongo-express deployment
+4. extenal Service for mongo-express                (using loadbalancer service type) (will need to create two open ports for {internalServiceIP,externalServiceIP})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+REFRENCE OF INFORMATION
+https://www.youtube.com/watch?v=EQNO_kM96Mo&list=PLy7NrYWoggjziYQIDorlXjTvvwweTYoNC&index=8

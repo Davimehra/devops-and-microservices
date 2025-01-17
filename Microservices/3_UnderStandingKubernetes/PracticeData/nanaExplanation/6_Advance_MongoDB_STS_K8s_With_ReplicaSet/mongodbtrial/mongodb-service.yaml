@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: mongodb-svc
+  labels:
+    environment: test
+spec:
+  type: ClusterIP
+  clusterIP: None
+  selector:
+    app: mongodb-app
+  ports:
+    - protocol: TCP
+      name: mongo-svc-port
+      port: 27017
+      targetPort: 27017
